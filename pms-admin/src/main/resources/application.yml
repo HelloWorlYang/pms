@@ -53,8 +53,8 @@ spring:
 
 ###################  mybatis-plus配置  ###################
 mybatis-plus:
-  mapper-locations: classpath*:com/stylefeng/guns/**/mapping/*.xml
-  typeAliasesPackage: com.stylefeng.guns.modular.system.model
+  mapper-locations: classpath*:com/yunpuvip/pms/**/mapping/*.xml
+  typeAliasesPackage: com.yunpuvip.pms.modular.system.model
   global-config:
     id-type: 0  #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
     db-column-underline: false
@@ -90,6 +90,7 @@ guns:
       url: jdbc:mysql://rds613943t1x67vo5hw7o.mysql.rds.aliyuncs.com:3306/gdyl_pms?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
       username: pmsuser
       password: VBcrmTfC2nzJqk6t
+      db-name: gdyl_pms_flowable
   muti-datasource:
     default-dataSource-name: dataSourceGuns #默认的数据源名称
     url: jdbc:mysql://rds613943t1x67vo5hw7o.mysql.rds.aliyuncs.com:3306/gdyl_pms?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false

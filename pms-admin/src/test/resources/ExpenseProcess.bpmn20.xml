@@ -16,12 +16,12 @@
     <exclusiveGateway id="judgeTask"></exclusiveGateway>
     <userTask id="directorTak" name="经理审批">
       <extensionElements>
-        <flowable:taskListener event="create" class="com.stylefeng.guns.modular.flowable.handler.ManagerTaskHandler"></flowable:taskListener>
+        <flowable:taskListener event="create" class="com.yunpuvip.pms.modular.flowable.handler.ManagerTaskHandler"></flowable:taskListener>
       </extensionElements>
     </userTask>
     <userTask id="bossTask" name="老板审批">
       <extensionElements>
-        <flowable:taskListener event="create" class="com.stylefeng.guns.modular.flowable.handler.BossTaskHandler"></flowable:taskListener>
+        <flowable:taskListener event="create" class="com.yunpuvip.pms.modular.flowable.handler.BossTaskHandler"></flowable:taskListener>
       </extensionElements>
     </userTask>
     <endEvent id="end" name="结束"></endEvent>
