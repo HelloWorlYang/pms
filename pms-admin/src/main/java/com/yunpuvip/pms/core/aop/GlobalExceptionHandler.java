@@ -7,8 +7,6 @@ import com.yunpuvip.pms.core.exception.GunsException;
 import com.yunpuvip.pms.core.log.LogManager;
 import com.yunpuvip.pms.core.log.factory.LogTaskFactory;
 import com.yunpuvip.pms.core.shiro.ShiroKit;
-import com.yunpuvip.pms.core.base.tips.ErrorTip;
-import com.yunpuvip.pms.core.exception.GunsException;
 import com.yunpuvip.pms.core.support.HttpKit;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.CredentialsException;

@@ -5,10 +5,6 @@ import com.yunpuvip.pms.core.datascope.DataScope;
 import com.yunpuvip.pms.modular.system.dao.UserMapper;
 import com.yunpuvip.pms.modular.system.model.User;
 import com.yunpuvip.pms.modular.system.service.IUserService;
-import com.yunpuvip.pms.core.datascope.DataScope;
-import com.yunpuvip.pms.modular.system.dao.UserMapper;
-import com.yunpuvip.pms.modular.system.model.User;
-import com.yunpuvip.pms.modular.system.service.IUserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

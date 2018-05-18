@@ -2,8 +2,6 @@ package com.yunpuvip.pms.core.beetl;
 
 import com.yunpuvip.pms.core.util.KaptchaUtil;
 import com.yunpuvip.pms.core.util.ToolUtil;
-import com.yunpuvip.pms.core.util.KaptchaUtil;
-import com.yunpuvip.pms.core.util.ToolUtil;
 import org.beetl.ext.spring.BeetlGroupUtilConfiguration;
 
 /**

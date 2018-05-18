@@ -2,7 +2,6 @@ package com.yunpuvip.pms.core.db;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.yunpuvip.pms.core.util.SpringContextHolder;
-import com.yunpuvip.pms.core.util.SpringContextHolder;
 
 import java.util.HashMap;
 import java.util.List;

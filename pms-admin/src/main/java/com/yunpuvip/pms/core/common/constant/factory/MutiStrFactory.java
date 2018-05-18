@@ -2,8 +2,6 @@ package com.yunpuvip.pms.core.common.constant.factory;
 
 import com.yunpuvip.pms.core.support.StrKit;
 import com.yunpuvip.pms.core.util.ToolUtil;
-import com.yunpuvip.pms.core.support.StrKit;
-import com.yunpuvip.pms.core.util.ToolUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;

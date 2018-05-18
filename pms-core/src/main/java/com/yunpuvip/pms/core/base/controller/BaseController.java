@@ -6,8 +6,6 @@ import com.yunpuvip.pms.core.base.warpper.BaseControllerWarpper;
 import com.yunpuvip.pms.core.page.PageInfoBT;
 import com.yunpuvip.pms.core.support.HttpKit;
 import com.yunpuvip.pms.core.util.FileUtil;
-import com.yunpuvip.pms.core.base.tips.SuccessTip;
-import com.yunpuvip.pms.core.base.warpper.BaseControllerWarpper;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

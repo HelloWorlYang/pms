@@ -3,7 +3,6 @@ package com.yunpuvip.pms.modular.system.dao;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.yunpuvip.pms.core.datascope.DataScope;
 import com.yunpuvip.pms.modular.system.model.User;
-import com.yunpuvip.pms.core.datascope.DataScope;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -241,7 +241,7 @@ UserInfoDlg.chPwd = function () {
 
 function onBodyDown(event) {
     if (!(event.target.id == "menuBtn" || event.target.id == "menuContent" || $(
-            event.target).parents("#menuContent").length > 0)) {
+        event.target).parents("#menuContent").length > 0)) {
         UserInfoDlg.hideDeptSelectTree();
     }
 }

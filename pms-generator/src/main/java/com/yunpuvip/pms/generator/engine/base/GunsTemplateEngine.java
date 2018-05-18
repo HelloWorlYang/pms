@@ -2,7 +2,6 @@ package com.yunpuvip.pms.generator.engine.base;
 
 import com.yunpuvip.pms.core.util.ToolUtil;
 import com.sun.javafx.PlatformUtil;
-import com.yunpuvip.pms.core.util.ToolUtil;
 import org.beetl.core.Configuration;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.Template;
