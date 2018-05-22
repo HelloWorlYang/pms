@@ -1,17 +1,17 @@
-package com.yunpuvip.pms.modular.biz.project_phase.controller;
+package com.yunpuvip.pms.modular.biz.controller;
 
 import com.yunpuvip.pms.core.base.controller.BaseController;
+import com.yunpuvip.pms.core.log.LogObjectHolder;
 import com.yunpuvip.pms.core.node.ZTreeNode;
+import com.yunpuvip.pms.modular.biz.service.IProjectPhaseService;
+import com.yunpuvip.pms.modular.system.model.ProjectPhase;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.yunpuvip.pms.core.log.LogObjectHolder;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.yunpuvip.pms.modular.system.model.ProjectPhase;
-import com.yunpuvip.pms.modular.biz.project_phase.service.IProjectPhaseService;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -103,16 +103,5 @@ public class ProjectPhaseController extends BaseController {
     @ResponseBody
     public Object detail(@PathVariable("projectPhaseId") Integer projectPhaseId) {
         return projectPhaseService.selectById(projectPhaseId);
-    }
-
-    /**
-     * 获取项目阶段的tree列表
-     */
-    @RequestMapping(value = "/tree")
-    @ResponseBody
-    public List<ZTreeNode> tree() {
-        List<ZTreeNode> tree = this.projectPhaseService.tree();
-        tree.add(ZTreeNode.createParent());
-        return tree;
     }
 }

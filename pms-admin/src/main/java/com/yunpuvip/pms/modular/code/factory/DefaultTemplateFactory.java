@@ -5,9 +5,6 @@ import com.yunpuvip.pms.GunsApplication;
 import com.yunpuvip.pms.core.CoreFlag;
 import com.yunpuvip.pms.core.util.ToolUtil;
 import com.yunpuvip.pms.generator.action.model.GenQo;
-import com.yunpuvip.pms.GunsApplication;
-import com.yunpuvip.pms.core.util.ToolUtil;
-import com.yunpuvip.pms.generator.action.model.GenQo;
 
 import java.util.ArrayList;
 import java.util.HashMap;

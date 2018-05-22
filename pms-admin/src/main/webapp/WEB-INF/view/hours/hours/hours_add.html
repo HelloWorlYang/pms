@@ -5,36 +5,29 @@
 
             <input type="hidden" id="id" value="">
 
-            <div class="row">
+            < class="row">
                 <div class="col-sm-6 b-r">
-                            <#input id="pidSel" name="项目" underline="true" readonly="readonly" hidden="pid"
-                                    clickFun="HoursInfoDlg.showProjectSelectTree(); return false;"
-                                    style="background-color: #ffffff !important;"/>
+                    <#select id="pid" name="项目" underline="true">
+                        <option disabled selected style="display :none"></option>
+                        @for(interface in interfaceList){
+                        <option value="${interface.code}">${interface.name}</option>
+                        @}
+                    </#select>
 
-                            <#input id="hid" name="阶段" underline="true" readonly="readonly" hidden="phaseid"
-                                    clickFun="HoursInfoDlg.showPhaseSelectTree(); return false;"
-                                    style="background-color: #ffffff !important;"/>
+                    <#select id="hid" name="阶段" underline="true">
+                        <option disabled selected style="display :none"></option>
+                        @for(interface in interfaceList)
+                        <option value="${interface.code}">${interface.name}</option>
+                        @}
+                    </#select>
 
-
-                            <#input id="uid" name="人员"/>
+                    <#input id="uid" name="员工"/>
                 </div>
 
                 <div class="col-sm-6">
                             <#input id="hours" name="小时" underline="true"/>
                             <#input id="comment" name="工时备注" underline="true"/>
                 </div>
-            </div>
-
-            <!-- 这是项目ID选择的下拉框 -->
-            <div id="menuContent" class="menuContent"
-                 style="display: none; position: absolute; z-index: 200;">
-                <ul id="treeDemo" class="ztree tree-box" style="width: 249px !important;"></ul>
-            </div>
-
-            <!-- 这是阶段ID的选择框 -->
-            <div id="PhaseMenu" class="menuContent"
-                 style="display: none; position: absolute; z-index: 200;">
-                <ul id="PhaseMenuTree" class="ztree tree-box" style="width: 245px !important;"></ul>
             </div>
 
             <div class="row btn-group-m-t">

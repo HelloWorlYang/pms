@@ -1,16 +1,20 @@
-package com.yunpuvip.pms.modular.biz.hours.controller;
+package com.yunpuvip.pms.modular.biz.controller;
 
 import com.yunpuvip.pms.core.base.controller.BaseController;
+import com.yunpuvip.pms.core.log.LogObjectHolder;
+import com.yunpuvip.pms.modular.biz.service.IHoursService;
+import com.yunpuvip.pms.modular.biz.warpper.HoursWarpper;
+import com.yunpuvip.pms.modular.system.model.Hours;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.beans.factory.annotation.Autowired;
-import com.yunpuvip.pms.core.log.LogObjectHolder;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import com.yunpuvip.pms.modular.system.model.Hours;
-import com.yunpuvip.pms.modular.biz.hours.service.IHoursService;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 员工工时控制器
@@ -59,8 +63,9 @@ public class HoursController extends BaseController {
      */
     @RequestMapping(value = "/list")
     @ResponseBody
-    public Object list(String condition) {
-        return hoursService.selectList(null);
+    public Object list(@RequestParam(required = false) Integer pid, @RequestParam(required = false) Integer uid, @RequestParam(required = false) Integer hid ) {
+        List<Map<String, Object>> Hours = hoursService.selectHours(pid,uid,hid);
+        return new HoursWarpper(Hours).warp();
     }
 
     /**

@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 
 /**
@@ -52,11 +54,13 @@ public class Project extends Model<Project> {
      * 开始日期
      */
     @TableField("start_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
     /**
      * 结束日期
      */
     @TableField("end_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
     /**
      * 项目是否有阶段

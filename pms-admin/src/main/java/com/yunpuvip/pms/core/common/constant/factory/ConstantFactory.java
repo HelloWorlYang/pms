@@ -6,6 +6,9 @@ import com.yunpuvip.pms.core.common.constant.cache.Cache;
 import com.yunpuvip.pms.core.common.constant.cache.CacheKey;
 import com.yunpuvip.pms.core.common.constant.state.ManagerStatus;
 import com.yunpuvip.pms.core.common.constant.state.MenuStatus;
+import com.yunpuvip.pms.modular.biz.dao.HoursMapper;
+import com.yunpuvip.pms.modular.biz.dao.ProjectMapper;
+import com.yunpuvip.pms.modular.biz.dao.ProjectPhaseMapper;
 import com.yunpuvip.pms.modular.system.dao.*;
 import com.yunpuvip.pms.modular.system.model.*;
 import com.yunpuvip.pms.core.log.LogObjectHolder;
@@ -17,6 +20,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +40,51 @@ public class ConstantFactory implements IConstantFactory {
     private UserMapper userMapper = SpringContextHolder.getBean(UserMapper.class);
     private MenuMapper menuMapper = SpringContextHolder.getBean(MenuMapper.class);
     private NoticeMapper noticeMapper = SpringContextHolder.getBean(NoticeMapper.class);
+    private HoursMapper hoursMapper = SpringContextHolder.getBean(HoursMapper.class);
+    private ProjectMapper projectMapper = SpringContextHolder.getBean(ProjectMapper.class);
+    private ProjectPhaseMapper projectPhaseMapper = SpringContextHolder.getBean(ProjectPhaseMapper.class);
 
     public static IConstantFactory me() {
         return SpringContextHolder.getBean("constantFactory");
+    }
+
+    /**
+     * 根据Hours表的id获取Hours的值
+     */
+    @Override
+    public Integer getHours(Integer id){
+        Hours hours = hoursMapper.selectById(id);
+        if (hours != null){
+            return hours.getHours();
+        } else{
+            return -0;
+        }
+    }
+
+    /**
+     * 根据项目id获取项目名
+     */
+    @Override
+    public String getProjectNameById(Integer pid) {
+        Project project = projectMapper.selectById(pid);
+        if (project != null){
+            return project.getProjectName();
+        } else {
+            return "--";
+        }
+    }
+
+    /**
+     * 根据项目id获取项目名
+     */
+    @Override
+    public String getPhaseNameById(Integer hid) {
+        ProjectPhase phasemapper = projectPhaseMapper.selectById(hid);
+        if (phasemapper != null){
+            return phasemapper.getPhaseName();
+        } else {
+            return "--";
+        }
     }
 
     /**

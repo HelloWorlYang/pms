@@ -3,8 +3,6 @@ package com.yunpuvip.pms.modular.system.service;
 import com.baomidou.mybatisplus.service.IService;
 import com.yunpuvip.pms.core.datascope.DataScope;
 import com.yunpuvip.pms.modular.system.model.User;
-import com.yunpuvip.pms.core.datascope.DataScope;
-import com.yunpuvip.pms.modular.system.model.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

@@ -7,10 +7,6 @@ import com.yunpuvip.pms.core.node.ZTreeNode;
 import com.yunpuvip.pms.modular.system.dao.DeptMapper;
 import com.yunpuvip.pms.modular.system.model.Dept;
 import com.yunpuvip.pms.modular.system.service.IDeptService;
-import com.yunpuvip.pms.core.node.ZTreeNode;
-import com.yunpuvip.pms.modular.system.dao.DeptMapper;
-import com.yunpuvip.pms.modular.system.model.Dept;
-import com.yunpuvip.pms.modular.system.service.IDeptService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

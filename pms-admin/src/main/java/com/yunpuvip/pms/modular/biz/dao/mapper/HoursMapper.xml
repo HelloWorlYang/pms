@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunpuvip.pms.modular.biz.dao.HoursMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.yunpuvip.pms.modular.system.model.Hours">
+        <id column="id" property="id" />
+        <result column="pid" property="pid" />
+        <result column="hid" property="hid" />
+        <result column="uid" property="uid" />
+        <result column="hours" property="hours" />
+        <result column="comment" property="comment" />
+        <result column="createtime" property="createtime" />
+        <result column="updatetime" property="updatetime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid , hid , uid , hours, comment, createtimeselectHours, updatetime
+    </sql>
+
+    <select id="selectHours" resultType="map">
+        select
+        h.pid ,h.uid ,h.hid ,
+        p.project_name ,c.phase_name ,u.name ,h.hours
+        from biz_project as p ,biz_project_phase as c ,sys_user as u ,biz_hours as h
+        where
+        <if test="h.pid != null and h.pid != 0">
+            (h.pid = #{h.pid} or h.pid in ( select id from biz_project where id = #{pid} ))
+        </if>
+
+        <if test="h.uid != null and h.uid != 0">
+            and (h.uid = #{h.uid} or h.pid in ( select id from sys_user where id = #{uid} ))
+        </if>
+
+        <if test="h.hid != null and h.hid != 0">
+            and (h.hid = #{h.hid} or h.hid in ( select id from biz_project_phase where id = #{hid} ))
+        </if>
+    </select>
+</mapper>

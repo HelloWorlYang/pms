@@ -113,4 +113,18 @@ public interface IConstantFactory {
      */
     List<Integer> getParentDeptIds(Integer deptid);
 
+    /**
+     * 根据项目Id获取project名
+     */
+    String getProjectNameById(Integer pid);
+
+    /**
+     * 根据阶段ID获取阶段名
+     */
+    String getPhaseNameById(Integer hid);
+
+    /**
+     * 根据hours表的id，获取hours的值
+     */
+    Integer getHours(Integer id);
 }

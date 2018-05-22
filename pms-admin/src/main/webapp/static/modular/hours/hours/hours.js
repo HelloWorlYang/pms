@@ -6,7 +6,6 @@ var Hours = {
     seItem: null,		//选中的条目
     table: null,
     layerIndex: -1,
-    projectid:0
 };
 
 /**
@@ -15,14 +14,11 @@ var Hours = {
 Hours.initColumn = function () {
     return [
         {field: 'selectItem', radio: true},
-            {title: '序号', field: 'id', visible: false, align: 'center', valign: 'middle'},
-            {title: '项目ID', field: 'pid', visible: true, align: 'center', valign: 'middle'},
-            {title: '阶段ID', field: 'hid', visible: true, align: 'center', valign: 'middle'},
-            {title: '人员ID', field: 'uid', visible: true, align: 'center', valign: 'middle'},
-            {title: '小时', field: 'hours', visible: true, align: 'center', valign: 'middle'},
-            {title: '工时备注', field: 'comment', visible: true, align: 'center', valign: 'middle'},
-            {title: '记录创建时间', field: 'createtime', visible: true, align: 'center', valign: 'middle'},
-            {title: '记录修改时间', field: 'updatetime', visible: true, align: 'center', valign: 'middle'}
+        {title: '序号', field: 'id', visible: false, align: 'center', valign: 'middle'},
+        {title: '项目名', field: 'projectName', visible: true, align: 'center', valign: 'middle'},
+        {title: '开发人员', field: 'userName', visible: true, align: 'center', valign: 'middle'},
+        {title: '开发阶段', field: 'phaseName', visible: true, align: 'center', valign: 'middle'},
+        {title: '开发时间', field: 'hours', visible: true, align: 'center', valign: 'middle'}
     ];
 };
 
@@ -97,27 +93,9 @@ Hours.search = function () {
     Hours.table.refresh({query: queryData});
 };
 
-Hours.onClickProject = function (e, treeId, treeNode) {
-    Hours.projectid = treeNode.id;
-    Hours.search();
-};
-
-Hours.onClickProjectPhase = function (e, treeId, treeNode) {
-    Hours.projectid = treeNode.id;
-    Hours.search();
-};
-
 $(function () {
     var defaultColunms = Hours.initColumn();
     var table = new BSTable(Hours.id, "/hours/list", defaultColunms);
     table.setPaginationType("client");
     Hours.table = table.init();
-
-    var ztree = new $ZTree("projectTree", "/project/tree");
-    ztree.bindOnClick(Hours.onClickProject);
-    ztree.init();
-
-    var ztreePhase = new $ZTree("project_phase_Tree", "/projectPhase/tree");
-    ztreePhase.bindOnClick(Hours.onClickProjectPhase);
-    ztreePhase.init();
 });
